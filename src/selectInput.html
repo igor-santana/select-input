@@ -1,0 +1,31 @@
+<template>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="phone" if:true={hasLabel}>{label}</label>
+    <div class="slds-form-element__control">
+      <div class="slds-combobox_container">
+        <div class={computedDropdownTriggerClass}>
+          <div class="slds-combobox__form-element c-input" role="none">
+            <input type="text" class={computedInputClass} id="phone" autocomplete="off" value={_value}
+                            onclick={handleInputClick} onfocus={handleInputFocus}
+                            onblur={handleInputBlur} onkeydown={handleKeyDown} oninput={handleChange} />
+            <div class="c-button-container">
+              <button class="slds-var-m-right_xx-small" disabled><lightning-icon icon-name="utility:check" alternative-text="salvar alterações" size="x-small"
+                title="salvar" class="c-button c-button_save"></lightning-icon></button>
+              <button><lightning-icon icon-name="utility:close" alternative-text="cancelar" size="x-small" title="cancelar"
+                class="c-button c-button_cancel"></lightning-icon></button>
+            </div>
+          </div>
+          <div class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid slds-listbox slds-listbox_vertical"
+            role="listbox" onscroll={handleListboxScroll} tabindex="-1" onfocus={handleListboxFocus}
+            onblur={handleListboxBlur} onkeydown={handleKeyDown} oninput={handleKeyUp}>
+            <template for:each={availableOptions} for:item="option" for:index="index">
+              <c-select-input-item item={option} key={option.value} index={index} onselect={handleItemSelect}
+                onmouseenter={handleItemHover}>
+              </c-select-input-item>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

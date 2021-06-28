@@ -1,0 +1,51 @@
+.slds-dropdown:focus {
+    outline: none;
+}
+
+.c-input {
+    position: relative;
+}
+
+.c-input input {
+    padding-right: 40px;
+}
+
+.slds-has-focus~.c-button-container {
+    border-color: #1589ee;
+}
+
+.c-button-container {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6px;
+    background-color: rgb(243, 242, 242);
+    border: 1px solid #dddbda;
+    border-left: none;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.c-button-container button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    height: 100%;
+    width: 20px;
+}
+
+button:disabled lightning-icon {
+    --sds-c-icon-color-foreground-default: var(--lwc-brandDisabled) !important;
+}
+
+.c-button_save {
+    --sds-c-icon-color-foreground-default: rgb(46, 132, 74);
+}
+
+.c-button_cancel {
+    --sds-c-icon-color-foreground-default: rgb(186, 5, 23);
+}
